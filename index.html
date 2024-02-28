@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GIT Team Simulator</title>
+    <link rel="icon" type="image/x-icon" href="./img/favicon.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header></header>
+
+    <section id="kanban">
+      <h2 class="kanban-title">
+        kanban board
+        <button class="info-btn" data-index="0">?</button>
+      </h2>
+
+      <div class="info" data-index="0">
+        Kanban Board is a brilliant visual tool that gives an overview of the
+        current work status and simplifies team communication. Regardless of
+        your team members' location, on a daily basis you are all able to
+        visualize, control and optimize workflow and collaborate in real-time.
+        <br />
+        This board is a simplified version that contains only your tasks. In
+        real projects there will be different tasks for every team member. Feel
+        free to drag and drop tasks in columns depending on their completion.
+      </div>
+
+      <div class="kanban">
+        <div class="kanban__header">
+          <div>to do</div>
+          <div>doing</div>
+          <div>done</div>
+        </div>
+
+        <div class="col-container">
+          <div class="col" data-task="01">
+            <div class="content" id="task-01">
+              set user name and email for git
+            </div>
+          </div>
+
+          <div class="col2" data-task="01"></div>
+          <div class="col3" data-task="01"></div>
+        </div>
+
+        <div class="col-container">
+          <div class="col" data-task="02">
+            <div class="content" id="task-02">
+              clone a remote repository using URL + access token:
+              https://access-token@github.com/dev-team/project-n.git
+            </div>
+          </div>
+
+          <div class="col2" data-task="02"></div>
+          <div class="col3" data-task="02"></div>
+        </div>
+
+        <div class="col-container">
+          <div class="col" data-task="03">
+            <div class="content" id="task-03">
+              set the column-gap in box-div to 20px
+            </div>
+          </div>
+
+          <div class="col2" data-task="03"></div>
+          <div class="col3" data-task="03"></div>
+        </div>
+
+        <div class="col-container">
+          <div class="col" data-task="04">
+            <div class="content" id="task-04">
+              stage changes made in styles.css
+            </div>
+          </div>
+
+          <div class="col2" data-task="04"></div>
+          <div class="col3" data-task="04"></div>
+        </div>
+
+        <div class="col-container">
+          <div class="col" data-task="05">
+            <div class="content" id="task-05">
+              commit changes with the message "gap corrected"
+            </div>
+          </div>
+
+          <div class="col2" data-task="05"></div>
+          <div class="col3" data-task="05"></div>
+        </div>
+
+        <div class="col-container">
+          <div class="col" data-task="06">
+            <div class="content" id="task-06">
+              push new changes to branch "main"
+            </div>
+          </div>
+
+          <div class="col2" data-task="06"></div>
+          <div class="col3" data-task="06"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="help">
+      <h2>click on help button if you need</h2>
+      <div class="help">
+        <button id="help">HELP</button>
+        <div id="help-info" class="help__info"></div>
+      </div>
+    </section>
+
+    <section id="git-output">
+      <h2>
+        git status (current state of local repository)
+        <button class="info-btn" data-index="2">?</button>
+      </h2>
+
+      <div class="info" data-index="2">
+        git status command is showing: <br />
+        - your current branch + its status; <br />
+        - changes to be committed. <br />
+        Basically it's a representation of a staging area in GIT.
+      </div>
+
+      <div class="git-status">
+        <p>on branch main</p>
+        <p>no commits yet</p>
+        <p>nothing to commit</p>
+      </div>
+
+      <h2>
+        git log (commits history)
+        <button class="info-btn" data-index="3">?</button>
+      </h2>
+
+      <div class="info" data-index="3">
+        git commit command is showing all commits in a branch with their: <br />
+        - hash (aka unique ID of a commit that identifies: the specific changes,
+        when the changes were made, who created the changes); <br />
+        - author of a commit; <br />
+        - date and time when commit was made; <br />
+        - commit's message.
+      </div>
+
+      <div class="git-log">
+        <p>fatal: your current branch "main" does not have any commits yet</p>
+        <p>no commits yet</p>
+        <p>nothing to commit</p>
+      </div>
+    </section>
+
+    <section id="branches">
+      <h2>
+        branches visualization
+        <button class="info-btn" data-index="4">?</button>
+      </h2>
+
+      <div class="info" data-index="4">
+        A helpful feature for showing a current repository tree with all the
+        branches.
+        <br />
+        Squares - commits with their hash; <br />
+        green square - branch name <br />
+        HEAD - you can think of the HEAD as the "current branch". When you
+        switch branches with git checkout, the HEAD revision changes to point to
+        the tip of the new branch.
+      </div>
+
+      <div class="branches-wrapper">
+        <img id="branches-img" src="./img/start.png" alt="br-01" />
+      </div>
+    </section>
+    <section id="process-t">
+      <h2>
+        files GIT migration <button class="info-btn" data-index="1">?</button>
+      </h2>
+
+      <div class="info" data-index="1">
+        This table represents migration of files starting from your local
+        working directory to remote repository. It is recommended to pay
+        attention to changes in this table to see what GIT is doing when certain
+        git commands are executed: <br />
+        git add - to stage files/changes; (preparing for commit) <br />
+        git commit - to locally commit files; ("take a snapshot of current
+        files' state")<br />
+        git push - to push files to remote repository; (upload new files/changes
+        to a remote repository)<br />
+        git pull - to incorporate changes from a remote repository into the
+        current branch; (download new changes/files to local machine)
+      </div>
+      <table class="process-t">
+        <thead>
+          <tr>
+            <th>working directory(local)</th>
+            <th>staging area</th>
+            <th>committed</th>
+            <th>GitHub repo(remote)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="table-wd">-</td>
+            <td class="table-sa">-</td>
+            <td class="table-c">-</td>
+            <td class="table-gr">-</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="work-area">
+      <h2>working area <button class="info-btn" data-index="5">?</button></h2>
+
+      <div class="info" data-index="5">
+        This is a very simplified representation of a code editor.
+      </div>
+
+      <div class="work-area">
+        <iframe
+          src="/page.html"
+          frameborder="0"
+          width="80%"
+          height="380px"
+          id="frame"
+        ></iframe>
+      </div>
+    </section>
+
+    <section id="terminal">
+      <div class="terminal">
+        <h2>terminal <button class="info-btn" data-index="6">?</button></h2>
+        <div class="info" data-index="6">
+          Terminal for running git commands. Assume that you are already at the
+          root of your workspace
+        </div>
+        <div class="terminal__output" id="terminal-output"></div>
+        <form class="terminal-form" onsubmit="return false;">
+          <label for="terminal" style="font-family: monospace"
+            >project-n&gt;</label
+          >
+          <input id="terminal" class="terminal__input" type="text" />
+        </form>
+      </div>
+    </section>
+
+    <footer></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@simondmc/popup-js@1.4.2/popup.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,434 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  font-family: Helvetica, sans-serif;
+  background-color: #161616;
+  color: #fff;
+  position: relative;
+}
+
+h2 {
+  margin-top: 30px;
+  padding-left: 10%;
+  font-size: 20px;
+  position: relative;
+
+  button {
+    border: none;
+    background-color: #bae11d;
+    color: #000;
+    font-size: 16px;
+    padding: 0 3px;
+    border-radius: 2px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 4px;
+    margin-left: 8px;
+    font-weight: 700;
+  }
+}
+
+section {
+  position: relative;
+}
+
+.info {
+  position: absolute;
+  width: 70%;
+  z-index: 1;
+  background-color: #080808;
+  padding: 10px;
+  right: 60%;
+  transform: translateX(60%);
+  border-radius: 5px;
+  border: 1px solid #bae11d;
+  display: none;
+}
+
+// ====== Kanban ======
+.kanban {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  background-color: #161616;
+  border: 1px solid #bae11d;
+  border-radius: 5px;
+
+  div {
+    width: 100%;
+  }
+
+  &__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    font-weight: 700;
+    background-color: #bae11d;
+    color: #000;
+  }
+
+  &__header div:not(:last-child) {
+    border-right: 1px solid #000;
+  }
+}
+
+.col-container {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px auto 0 auto;
+  font-size: 14px;
+}
+
+.col-container:last-child {
+  margin-bottom: 10px;
+}
+
+.content {
+  text-align: center;
+  padding: 5px;
+  color: #000;
+  border-radius: 15px;
+}
+
+.col .content {
+  background: #bae11d;
+}
+
+.col2 .content {
+  background: #e1c21d;
+}
+
+.col3 .content {
+  background: #1ddbe1;
+}
+
+#next,
+#pull-request {
+  border: 1px solid #64646480;
+  padding: 3px 25px;
+  background-color: #bae11d;
+  color: #000;
+  cursor: pointer;
+}
+
+// ====== Help section =======
+.help {
+  width: 80%;
+  margin: 0 auto;
+
+  button {
+    border: none;
+    padding: 3px 25px;
+    background-color: #bae11d;
+    color: #000;
+    cursor: pointer;
+  }
+
+  &__info {
+    margin-top: 10px;
+    line-height: 20px;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 1s ease-in-out;
+
+    span {
+      font-family: monospace;
+      font-size: 17px;
+      color: #bae11d;
+    }
+  }
+}
+
+// ====== Process table ======
+
+.process-t {
+  margin: 0 auto;
+  width: 80%;
+
+  thead {
+    background: #bae11d;
+    color: #000;
+  }
+
+  .table-sa {
+    color: #986ee2;
+  }
+
+  .table-c {
+    color: #4284e4;
+  }
+
+  .table-gr {
+    color: #1ddbe1;
+  }
+}
+
+// ====== Git Outputs ======
+.git-status,
+.git-log {
+  width: 80%;
+  margin: 0 auto;
+  font-family: monospace;
+  font-size: 16px;
+  border: 1px solid #bae11d;
+  padding: 10px;
+  border-radius: 5px;
+
+  p {
+    margin-left: 20px;
+  }
+
+  span {
+    color: #bae11d;
+  }
+
+  div {
+    margin-left: 20px;
+    color: #ce3c3c;
+  }
+
+  .green {
+    color: #bae11d;
+  }
+}
+
+.git-log {
+  max-height: 200px;
+  overflow-y: scroll;
+}
+
+// ====== Branches visualization ======
+
+.branches-wrapper {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+// ====== Working area ======
+.work-area {
+  text-align: center;
+  margin-bottom: 120px;
+
+  iframe {
+    border: 1px solid #bae11d;
+    border-radius: 5px;
+    display: none;
+    width: 80%;
+  }
+}
+
+// ======= Terminal =======
+.terminal {
+  margin: 0 auto;
+  padding: 20px 0;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  background-color: #080808;
+  width: 100%;
+
+  h2 {
+    margin-top: 0;
+    text-align: left;
+  }
+
+  &__input {
+    width: 80%;
+    outline: none;
+    padding-left: 8.5%;
+    height: 40px;
+    font-size: 16px;
+    font-family: monospace;
+    background-color: #161616;
+    border: 1px solid #bae11d;
+    color: #fff;
+  }
+
+  &__output {
+    width: 80%;
+    margin: 0 auto;
+    padding: 5px 0;
+    text-align: left;
+    font-size: 14px;
+    display: none;
+  }
+}
+
+.terminal-form {
+  position: relative;
+
+  label {
+    position: absolute;
+    left: 10.5%;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #bae11d;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .terminal {
+    &__input {
+      padding-left: 9.5%;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .terminal {
+    &__input {
+      padding-left: 12%;
+    }
+  }
+}
+
+@media screen and (max-width: 680px) {
+  h2 {
+    padding-left: 3%;
+    font-size: 16px;
+  }
+
+  .terminal {
+    &__input {
+      padding-left: 16%;
+      width: 95%;
+    }
+  }
+
+  .kanban {
+    width: 95%;
+  }
+
+  .terminal-form {
+    label {
+      left: 5%;
+    }
+  }
+
+  .help {
+    width: 95%;
+  }
+
+  .git-status,
+  .git-log {
+    width: 95%;
+  }
+
+  .branches-wrapper {
+    width: 95%;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .process-t {
+    width: 95%;
+  }
+
+  .work-area {
+    iframe {
+      width: 95%;
+    }
+  }
+
+  .content {
+    padding: 3px;
+  }
+
+  .col-container {
+    margin: 5px auto 0 auto;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  h2 {
+    font-size: 14px;
+  }
+
+  .terminal {
+    &__input {
+      padding-left: 18%;
+      font-size: 14px;
+    }
+  }
+
+  .col-container {
+    font-size: 12px;
+  }
+
+  .help {
+    font-size: 14px;
+
+    &__info {
+      span {
+        font-size: 15px;
+      }
+    }
+
+    button {
+      font-size: 12px;
+    }
+  }
+
+  .git-status,
+  .git-log {
+    font-size: 14px;
+
+    p {
+      margin-left: 5px;
+    }
+  }
+
+  .process-t {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  h2 {
+    font-size: 13px;
+
+    button {
+      font-size: 14px;
+      padding: 0 2px;
+    }
+  }
+
+  .terminal {
+    &__input {
+      padding-left: 22%;
+      font-size: 13px;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .terminal {
+    &__input {
+      padding-left: 25%;
+    }
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .terminal {
+    &__input {
+      padding-left: 28%;
+    }
+  }
+}

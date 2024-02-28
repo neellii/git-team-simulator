@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page</title>
+    <style>
+      body {
+        font: 1.2em Helvetica, Arial, sans-serif;
+        margin: 20px;
+        padding: 0;
+      }
+
+      p {
+        margin: 15px 0 0 0;
+        color: #fff;
+      }
+
+      textarea {
+        display: block;
+        width: 100%;
+        max-width: 700px;
+        margin-bottom: 10px;
+        padding: 10px 10px 0px;
+        background-color: #fff;
+        color: #000;
+        border: none;
+        border-left: 6px solid #bae11d;
+        font-size: 90%;
+      }
+
+      textarea:nth-of-type(1) {
+        height: 100px;
+      }
+
+      section {
+        width: 100%;
+        max-width: 700px;
+        border: 1px solid #fff;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+
+      .box > * {
+        border: 2px solid #fff;
+        border-radius: 5px;
+        background-color: #fff;
+        padding: 3px 10px;
+      }
+
+      .box {
+        width: 100%;
+      }
+
+      @media screen and (max-width: 680px) {
+        textarea {
+          max-width: 600px;
+        }
+      }
+    </style>
+    <style class="editable"></style>
+  </head>
+  <body>
+    <p>output</p>
+    <section>
+      <div class="box">
+        <div>One</div>
+        <div>Two</div>
+        <div>Three</div>
+      </div>
+    </section>
+
+    <p>index.html</p>
+    <textarea id="code" class="playable-html">
+      &lt;div class="box"&gt;
+        &lt;div&gt;title 1&lt;/div&gt;
+        &lt;div&gt;title 2&lt;/div&gt;
+        &lt;div&gt;title 3&lt;/div&gt;
+      &lt;/div&gt;
+    </textarea>
+
+    <p>styles.css</p>
+    <textarea class="playable-css">
+      .box {display: flex; column-gap: 5px; justify-content: center; }
+    </textarea>
+
+    <script>
+      const section = document.querySelector("section");
+      const editable = document.querySelector(".editable");
+      const textareaHTML = document.querySelector(".playable-html");
+      const textareaCSS = document.querySelector(".playable-css");
+      let htmlCode = textareaHTML.value;
+      let cssCode = textareaCSS.value;
+
+      function fillCode() {
+        editable.innerHTML = textareaCSS.value;
+        section.innerHTML = textareaHTML.value;
+      }
+
+      textareaHTML.addEventListener("input", fillCode);
+      textareaCSS.addEventListener("input", fillCode);
+      window.addEventListener("load", fillCode);
+    </script>
+  </body>
+</html>
