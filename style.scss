@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
 * {
   padding: 0;
   margin: 0;
@@ -7,7 +10,7 @@
 body {
   height: 100%;
   width: 100%;
-  font-family: Helvetica, sans-serif;
+  font-family: "Inter", sans-serif;
   background-color: #161616;
   color: #fff;
   position: relative;
@@ -145,7 +148,7 @@ section {
     transition: max-height 1s ease-in-out;
 
     span {
-      font-family: monospace;
+      font-family: "Space Mono", monospace;
       font-size: 17px;
       color: #bae11d;
     }
@@ -181,7 +184,8 @@ section {
 .git-log {
   width: 80%;
   margin: 0 auto;
-  font-family: monospace;
+  font-family: "Space Mono", monospace;
+  line-height: 18px;
   font-size: 16px;
   border: 1px solid #bae11d;
   padding: 10px;
@@ -252,7 +256,7 @@ section {
     padding-left: 8.5%;
     height: 40px;
     font-size: 16px;
-    font-family: monospace;
+    font-family: "Space Mono", monospace;
     background-color: #161616;
     border: 1px solid #bae11d;
     color: #fff;
@@ -309,7 +313,11 @@ section {
     }
   }
 
-  .kanban {
+  .kanban,
+  .help,
+  .git-status,
+  .git-log,
+  .process-t {
     width: 95%;
   }
 
@@ -319,25 +327,12 @@ section {
     }
   }
 
-  .help {
-    width: 95%;
-  }
-
-  .git-status,
-  .git-log {
-    width: 95%;
-  }
-
   .branches-wrapper {
     width: 95%;
     img {
       width: 100%;
       object-fit: cover;
     }
-  }
-
-  .process-t {
-    width: 95%;
   }
 
   .work-area {
@@ -367,7 +362,8 @@ section {
     }
   }
 
-  .col-container {
+  .col-container,
+  .process-t {
     font-size: 12px;
   }
 
@@ -387,15 +383,18 @@ section {
 
   .git-status,
   .git-log {
-    font-size: 14px;
+    font-size: 12px;
+    line-height: 15px;
 
     p {
       margin-left: 5px;
     }
   }
 
-  .process-t {
-    font-size: 12px;
+  .info {
+    font-size: 14px;
+    line-height: 15px;
+    padding: 5px;
   }
 }
 

@@ -49,12 +49,7 @@ const onloadPopup = new Popup({
   content: `
       Imagine your team is developing a website for a client. You are going to work in a GIT version control system and GitHub to collaborate with a team. Git is a version control system that you download onto your computer. It is essential that you use Git if you want to collaborate with other developers on a coding project or work on your own project. GitHub is a product that allows you to host your Git projects on a remote server somewhere (or in other words, in the cloud). To better understand how to use GIT and GitHub to collaborate with a team, I've created this site. And I hope this will help you too.
        Here is the tools to help you out:
-      - kanban simple table (to track your tasks)
-      - table representating files' migration in GIT (to track what files were staged, committed, pushed)
-      - git log and git status commands output (to track current state of a project)
-      - branches visualization
-      - very simplified working area
-      - terminal input.
+      - kanban simple table (to track your tasks) </br> - table representating files' migration in GIT (to track what files were staged, committed, pushed) </br> - git log and git status commands output (to track current state of a project) </br> - branches visualization </br> - very simplified working area </br> - terminal input.
       Don't worry you can always click on a '?' symbol beside every tool to see full explanation. Also click on HELP button to see step-by-step instructions with explanation on how to do current kanban task if you're not sure.
       {btn-popup-button}[Got it!]`,
   showImmediately: true,
@@ -72,9 +67,9 @@ const onloadPopup = new Popup({
         padding: 3px 25px;
       }
       .popup.onloadPopup .popup-title {
-        font-size: 28px;
+        font-size: 20px;
       }`,
-  fontSizeMultiplier: 0.7,
+  fontSizeMultiplier: 0.68,
   loadCallback: () => {
     const gotItBtn = document.querySelector(".popup-button");
     gotItBtn.addEventListener("click", () => {
@@ -105,7 +100,7 @@ const part1DonePopup = new Popup({
         padding: 3px 25px;
       }
       .popup.part1DonePopup .popup-title {
-        font-size: 28px;
+        font-size: 20px;
       }`,
   fontSizeMultiplier: 0.7,
   loadCallback: () => {
@@ -173,9 +168,9 @@ const pullRequestPopup = new Popup({
         padding: 3px 25px;
       }
       .popup.pullRequestPopup .popup-title {
-        font-size: 28px;
+        font-size: 20px;
       }`,
-  fontSizeMultiplier: 0.7,
+  fontSizeMultiplier: 0.68,
   loadCallback: () => {
     const confirmPullRequest = document.querySelector(".confirm");
     confirmPullRequest.addEventListener("click", () => {
@@ -242,9 +237,9 @@ const mergedPopup = new Popup({
         padding: 3px 25px;
       }
       .popup.mergedPopup .popup-title {
-        font-size: 28px;
+        font-size: 20px;
       }`,
-  fontSizeMultiplier: 0.7,
+  fontSizeMultiplier: 0.65,
   loadCallback: () => {
     const gotIt = document.querySelector(".got");
     gotIt.addEventListener("click", () => {
@@ -462,7 +457,7 @@ const commitDate = (minus) => {
 
 // ============ terminal input event listeners ==========
 function task01TerminalListener(e) {
-  if (e.key === "Enter") {
+  if (e.key === "Enter" || e.keyCode === 13) {
     e.preventDefault();
 
     let arr01 = [
@@ -494,7 +489,7 @@ function task01TerminalListener(e) {
 }
 
 function task02TerminalListener(e) {
-  if (e.key === "Enter") {
+  if (e.key === "Enter" || e.keyCode === 13) {
     e.preventDefault();
     if (
       e.target.value ===
@@ -521,7 +516,7 @@ function task02TerminalListener(e) {
 }
 
 function task04TerminalListener(e) {
-  if (e.key === "Enter") {
+  if (e.key === "Enter" || e.keyCode === 13) {
     e.preventDefault();
 
     if (
@@ -538,7 +533,7 @@ function task04TerminalListener(e) {
 }
 
 function task05TerminalListener(e) {
-  if (e.key === "Enter") {
+  if (e.key === "Enter" || e.keyCode === 13) {
     e.preventDefault();
 
     if (e.target.value === `git commit -m "column-gap corrected"`) {
@@ -567,7 +562,7 @@ function task05TerminalListener(e) {
 }
 
 function task06TerminalListener(e) {
-  if (e.key === "Enter") {
+  if (e.key === "Enter" || e.keyCode === 13) {
     e.preventDefault();
 
     if (e.target.value === "git push origin main") {
@@ -588,13 +583,13 @@ function task06TerminalListener(e) {
 }
 
 function task07TerminalListener(e) {
-  if (e.key === "Enter") {
+  if (e.key === "Enter" || e.keyCode === 13) {
     e.preventDefault();
 
     if (e.target.value === "git checkout -b title-4") {
       e.target.value = "";
       showHide(`switched to branch title-4`);
-      gitStatus.innerHTML = `On branch title-4 </br> nothing to commit, working tree clean`;
+      gitStatus.innerHTML = `On branch title-4 </br> </br> nothing to commit, working tree clean`;
       branchesImg.setAttribute("src", "./img/br-04.png");
       row01[2].appendChild(task01);
       row02[1].appendChild(task02);
@@ -607,7 +602,7 @@ function task07TerminalListener(e) {
     if (e.target.value === "git checkout title-4") {
       e.target.value = "";
       showHide("switched to branch title-4");
-      gitStatus.innerHTML = `On branch title-4 </br> nothing to commit, working tree clean`;
+      gitStatus.innerHTML = `On branch title-4 </br> </br> nothing to commit, working tree clean`;
       branchesImg.setAttribute("src", "./img/br-04.png");
       row01[2].appendChild(task01);
       row02[1].appendChild(task02);
@@ -619,7 +614,7 @@ let s = {};
 let added = false;
 
 function task10TerminalListener(e) {
-  if (e.key === "Enter") {
+  if (e.key === "Enter" || e.keyCode === 13) {
     e.preventDefault();
 
     if (e.target.value === "git add .") {
@@ -686,7 +681,7 @@ function task10TerminalListener(e) {
       showHide(
         "[title-4 6ce46a0] title 4 added </br> 2 files changed, 2 insertions(+), 0 deletion(-)"
       );
-      gitStatus.innerHTML = `On branch title-4 </br> nothing to commit, working tree clean`;
+      gitStatus.innerHTML = `On branch title-4 </br> </br> nothing to commit, working tree clean`;
       gitLog.innerHTML = `
         <span>commit 6ce46a0f118ecab12c064780d1245b509ecf17ad (HEAD -&gt; title-4)</span>
         </br> Author: ${userName} &lt;${userEmail}&gt; </br> Date: ${commitDate(
@@ -714,7 +709,7 @@ function task10TerminalListener(e) {
 }
 
 function task11TerminalListener(e) {
-  if (e.key === "Enter") {
+  if (e.key === "Enter" || e.keyCode === 13) {
     e.preventDefault();
 
     if (e.target.value === `git push origin -u title-4`) {
@@ -731,7 +726,7 @@ function task11TerminalListener(e) {
 }
 
 function task13TerminalListener(e) {
-  if (e.key === "Enter") {
+  if (e.key === "Enter" || e.keyCode === 13) {
     e.preventDefault();
 
     if (e.target.value === `git checkout main`) {
@@ -759,7 +754,7 @@ function task13TerminalListener(e) {
 }
 
 function task14TerminalListener(e) {
-  if (e.key === "Enter") {
+  if (e.key === "Enter" || e.keyCode === 13) {
     e.preventDefault();
 
     if (e.target.value === "git fetch origin") {
@@ -775,7 +770,7 @@ function task14TerminalListener(e) {
 }
 
 function task15TerminalListener(e) {
-  if (e.key === "Enter") {
+  if (e.key === "Enter" || e.keyCode === 13) {
     e.preventDefault();
 
     if (e.target.value === `git merge origin/main`) {
