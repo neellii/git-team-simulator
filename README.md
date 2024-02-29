@@ -13,4 +13,4 @@ Sources that I used:
  <br>
  <br>
  
- *If you will notice any mistakes/bugs, misinformation or you have suggestions let me know, or feel free to make PR. And forgive any English mistakes* :smile:
+ *If you will notice any mistakes/bugs, misinformation or you have suggestions let me know, or feel free to make PR. I am looking forward to expand project to cover more Git topics. And forgive any English mistakes* :smile:
